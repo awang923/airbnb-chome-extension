@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name":"airbnb-extension",
+  "description": "desc",
+  "version": "0.0.1",
+  "side_panel": {
+    "default_path": "./index.html"
+  },
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "permissions": ["scripting", "sidePanel", "tabs"],
+  "host_permissions": [
+    "http://*/",
+    "https://*/"
+  ]
+}
