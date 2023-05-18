@@ -1,17 +1,27 @@
 {
-  "manifest_version": 3,
   "name":"airbnb-extension",
   "description": "desc",
-  "version": "0.0.1",
-  "side_panel": {
-    "default_path": "./index.html"
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+          "https://*/*",
+          "http://*/*"
+      ],
+      "js": ["side-panel.js"]
+    }
+  ],
+  "background": {
+      "service_worker": "background.js"
   },
-  "action": {
-    "default_title": "Click to open panel"
-  },
-  "permissions": ["scripting", "sidePanel", "tabs"],
-  "host_permissions": [
-    "http://*/",
-    "https://*/"
-  ]
+  "action": {},
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html" ],
+      "matches": ["https://*/*", "http://*/*"],
+      "extension_ids": ["comfhicckfagghcnmaflpaaikpjnhfhm"]
+    }
+  ],
+  "permissions": ["scripting", "sidePanel", "tabs"]
 }
